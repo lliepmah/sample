@@ -11,6 +11,7 @@
     tools:context="ru.kodep.sample.sampleproject.MainActivity">
 
     <TextView
+        android:id="@+id/ac_main_tv_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"/>
