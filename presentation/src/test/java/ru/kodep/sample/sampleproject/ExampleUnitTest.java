@@ -22,4 +22,10 @@ public class ExampleUnitTest {
     public void addition_isLastSampleTest() {
         assertEquals(20, 4 * 5);
     }
+
+    @Test
+    public void addition_isLastSampleError() {
+        int a = 8;
+        assertEquals(20, a * 4 * 5);
+    }
 }
