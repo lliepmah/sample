@@ -11,6 +11,11 @@ android {
     buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
 
     defaultConfig {
+        println "name testes =  $rootProject.ext.androidVersionName"
+        def versionNeme = globalConfiguration.getAt("androidVersionName");
+        println "android read=$versionNeme"
+
+
         minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
         targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
 
@@ -20,8 +25,7 @@ android {
         testInstrumentationRunner globalConfiguration.getAt("testInstrumentationRunner")
         testApplicationId globalConfiguration.getAt("testApplicationId")
 
-        def versionNeme = globalConfiguration.getAt("androidVersionName");
-        println "android read=$versionNeme"
+
     }
 
     compileOptions {
