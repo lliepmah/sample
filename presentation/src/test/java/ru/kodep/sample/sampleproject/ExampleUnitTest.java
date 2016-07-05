@@ -25,7 +25,7 @@ public class ExampleUnitTest {
 
     @Test
     public void addition_isLastSampleError() {
-        int a = 8;
+        int a = 1;
         assertEquals(20, a * 4 * 5);
     }
 }
