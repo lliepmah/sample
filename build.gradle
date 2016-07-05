@@ -1,4 +1,20 @@
 apply plugin: 'com.github.ben-manes.versions'
+apply from: 'buildsystem/dependencies.gradle'
+
+def loadProperties(String sourceFileName) {
+    def config = new Properties()
+    def propFile = file(sourceFileName)
+
+    System.err.println("Loading property file: " + propFile.absolutePath)
+
+    if (propFile.canRead()) {
+        config.load(new FileInputStream(propFile))
+        for (Map.Entry property in config) {
+            println "setting " + property.key
+            project.ext[property.key] = property.value;
+        }
+    }
+}
 
 buildscript {
     repositories {
@@ -21,6 +37,17 @@ buildscript {
 }
 
 allprojects {
+    ext {
+        loadProperties("build_number")
+        BUILD_NUMBER = rootProject.ext.has("BUILD_NUMBER") ? BUILD_NUMBER as int : 1
+
+        androidApplicationId = 'ru.kodep.sample.sampleproject'
+        androidVersionCode = BUILD_NUMBER
+        androidVersionName = "0.0.$BUILD_NUMBER"
+        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+        testApplicationId = 'ru.entirec.kindneighbour.test'
+    }
+
     repositories {
         maven { url "https://jitpack.io" }
         maven { url "http://dl.bintray.com/populov/maven" }
