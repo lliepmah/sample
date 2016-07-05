@@ -19,6 +19,9 @@ android {
         versionName globalConfiguration.getAt("androidVersionName")
         testInstrumentationRunner globalConfiguration.getAt("testInstrumentationRunner")
         testApplicationId globalConfiguration.getAt("testApplicationId")
+
+        def versionNeme = globalConfiguration.getAt("androidVersionName");
+        println "android read=$versionNeme"
     }
 
     compileOptions {
