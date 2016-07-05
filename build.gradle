@@ -46,6 +46,8 @@ allprojects {
         androidVersionName = "0.0.$BUILD_NUMBER"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
         testApplicationId = 'ru.entirec.kindneighbour.test'
+
+        println "androidVersionName=$androidVersionName"
     }
 
     repositories {
