@@ -15,6 +15,11 @@ public class ExampleUnitTest {
 
     @Test
     public void addition_isAnother() {
-        assertEquals(6, 0 * 2);
+        assertEquals(6, 3 * 2);
+    }
+
+    @Test
+    public void addition_isLastSampleTest() {
+        assertEquals(20, 4 * 5);
     }
 }
